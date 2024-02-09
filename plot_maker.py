@@ -13,7 +13,3 @@ def create_plot_of_trajectory(mean_x, mean_y, lim):
     plt.ylim(0, lim)
     plt.grid(True)
     plt.show()
-
-
-def create_plot_of_one_frame(x_coordinates, y_coordinates, lim):
-    return []
