@@ -5,7 +5,7 @@ def gaussian_process_plot(actual_values, predicted_values, uncertainties, confid
                           ylim=None):
     # Create subplots
     num_points = len(actual_values)
-    figsize = (num_points / 10, 5)
+    figsize = (15, 5)
     _, axs = plt.subplots(1, figsize=figsize)
     # Plot the covariance as a shaded area over the entire graph
     x_vals = range(num_points)
