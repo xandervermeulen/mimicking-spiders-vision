@@ -41,6 +41,7 @@ def plot_maker_3d(y_test, y_pred, title, amount_to_show=10):
     # Connect the points with lines according to time
     ax.plot(y_test[:amount_to_show, 0], y_test[:amount_to_show, 1],
             y_test[:amount_to_show, 2], color='blue', linestyle='-', linewidth=1)
+
     ax.scatter3D(y_pred[:amount_to_show, 0], y_pred[:amount_to_show, 1],
                  y_pred[:amount_to_show, 2], color='red', label='Predicted values')
 
