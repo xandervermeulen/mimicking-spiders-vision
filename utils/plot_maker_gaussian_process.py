@@ -48,7 +48,9 @@ def plot_maker_3d(y_test, y_pred, title, amount_to_show=10):
     # Connect the points with lines according to time
     ax.plot(y_pred[:amount_to_show, 0], y_pred[:amount_to_show, 1],
             y_pred[:amount_to_show, 2], color='red', linestyle='-', linewidth=1)
-
+    ax.set_xlim(0)
+    ax.set_ylim(0)
+    ax.set_zlim(0)
     # Customize labels and legend
     ax.set_xlabel('X axis')
     ax.set_ylabel('Y axis')
