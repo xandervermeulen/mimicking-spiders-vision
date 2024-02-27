@@ -16,8 +16,8 @@ def calculate_middle_points_of_ball(cap, lower, upper):
                                      (detected_ball[:, :, 1] >= lower[1]) & (detected_ball[:, :, 1] <= upper[1]) &
                                      (detected_ball[:, :, 2] >= lower[2]) & (detected_ball[:, :, 2] <= upper[2]))))
         red_coordinates[:, 0] = frame.shape[0] - red_coordinates[:, 0]
-        mean_x.append(np.mean(red_coordinates[:, 1]))
-        mean_y.append(np.mean(red_coordinates[:, 0]))
+        mean_x.append(np.median(red_coordinates[:, 1]))
+        mean_y.append(np.median(red_coordinates[:, 0]))
 
     cap.release()
     cv2.destroyAllWindows()
