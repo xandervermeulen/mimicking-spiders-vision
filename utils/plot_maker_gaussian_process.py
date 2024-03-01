@@ -31,23 +31,23 @@ def gaussian_process_plot(actual_values, predicted_values, uncertainties, confid
     plt.show()
 
 
-def plot_maker_3d(y_test, y_pred, title, amount_to_show=10):
-    fig = plt.figure()
+def plot_maker_3d(y_test, y_pred, title):
+    _ = plt.figure()
     ax = plt.axes(projection='3d')
     # Scatter plot for true values
-    ax.scatter3D(y_test[:amount_to_show, 0], y_test[:amount_to_show, 1],
-                 y_test[:amount_to_show, 2], color='blue', label='True values')
+    ax.scatter3D(y_test[:, 0], y_test[:, 1],
+                 y_test[:, 2], color='blue', label='True values', s=2)
 
     # Connect the points with lines according to time
-    ax.plot(y_test[:amount_to_show, 0], y_test[:amount_to_show, 1],
-            y_test[:amount_to_show, 2], color='blue', linestyle='-', linewidth=1)
+    ax.plot(y_test[:, 0], y_test[:, 1],
+            y_test[:, 2], color='blue', linestyle='-', linewidth=0.5)
 
-    ax.scatter3D(y_pred[:amount_to_show, 0], y_pred[:amount_to_show, 1],
-                 y_pred[:amount_to_show, 2], color='red', label='Predicted values')
+    ax.scatter3D(y_pred[:, 0], y_pred[:, 1],
+                 y_pred[:, 2], color='red', label='Predicted values', s=2)
 
     # Connect the points with lines according to time
-    ax.plot(y_pred[:amount_to_show, 0], y_pred[:amount_to_show, 1],
-            y_pred[:amount_to_show, 2], color='red', linestyle='-', linewidth=1)
+    ax.plot(y_pred[:, 0], y_pred[:, 1],
+            y_pred[:, 2], color='red', linestyle='-', linewidth=0.5)
     ax.set_xlim(0)
     ax.set_ylim(0)
     ax.set_zlim(0)
