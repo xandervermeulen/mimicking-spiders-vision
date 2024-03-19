@@ -18,9 +18,9 @@ If your data has some missing values, you can use the [TrajectoryPredictionInter
 This will not always work, but if there are not too many it should work fine.
 ### Step 5: Train the model
 In the [Neural_Network_Demo.ipynb](Demo%2FNeural_Network_Demo.ipynb) notebook, fill in the variables at the top and run the notebook.
-This notebook uses a neural network to predict the position of the ball in the 3d space in Unity3d.
+This notebook uses a neural network to predict the position of the ball in the 3d space.
 It is import to note that you need to put multiple trajectories in the training data to get a good result.
-It is a good idea to concatenate the data from multiple recordings together into 1 large dataset.
+It is a good idea to concatenate the data from multiple recordings together into 1 large dataset (one for input X and one for out y).
 As the test trajectory, ideally give a trajectory that is not in the training data.
 At the end of the notebook you can see the result of the prediction.
 
