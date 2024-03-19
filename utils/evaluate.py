@@ -1,6 +1,6 @@
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
-from utils.plot_maker_gaussian_process import plot_maker_3d
+from utils.plot_maker import plot_maker_3d
 
 
 def evaluate_model(y_val, y_pred, set):

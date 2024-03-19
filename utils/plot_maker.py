@@ -60,3 +60,23 @@ def plot_maker_3d(y_test, y_pred, title):
 
     # Show the plot
     plt.show()
+
+
+def overview_metrics(df, x_label, limit=1.0):
+    plt.figure(figsize=(10, 6))
+    i = 0
+    colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan']
+    for col in df.columns:
+        plt.plot(df.index, df[col], marker='o', label=col, color=colors[i])
+        i += 1
+    # Labels and title
+    plt.xlabel(x_label)
+    plt.ylabel('Score')
+    plt.title('Metrics for ' + x_label)
+    plt.xticks(df.index, df.index, rotation=45, ha='right')  # Set x-axis labels to be the row names
+    plt.ylim(0, limit)
+    plt.grid(True)
+    plt.legend()
+
+    # Show plot
+    plt.show()
