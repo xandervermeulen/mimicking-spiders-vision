@@ -3,7 +3,7 @@ from plotly.subplots import make_subplots
 import plotly.io as pio
 
 
-def show_animation(y_test, y_pred):
+def show_animation(y_test, y_pred,x_range, y_range, z_range):
     # Create a 3D scatter plot figure
     fig = make_subplots(rows=1, cols=1, specs=[[{'type': 'scatter3d'}]])
 
@@ -60,7 +60,10 @@ def show_animation(y_test, y_pred):
         ),
         name='True trajectory'
     ))
-
+    xaxis_range = x_range
+    yaxis_range = y_range
+    zaxis_range = z_range
+    # Update layout
     fig.update_layout(
         scene=dict(
             xaxis=dict(showbackground=False, showgrid=True, showline=True, linecolor='black', linewidth=2),
@@ -70,9 +73,10 @@ def show_animation(y_test, y_pred):
             yaxis_title='Y axis',
             zaxis_title='Z axis',
             # set the x-axis from 0 to 20
-            xaxis_range=[0, 10],
-            yaxis_range=[0, 6],
-            zaxis_range=[0, 26],
+
+            xaxis_range=xaxis_range,
+            yaxis_range=yaxis_range,
+            zaxis_range=zaxis_range,
             # set the y-axis from 0 to 20
             aspectratio=dict(x=1, y=1, z=1),
             aspectmode='manual'
@@ -160,6 +164,6 @@ def show_animation(y_test, y_pred):
     return fig
 
 
-def save_animation(y_test, y_pred, output_location):
-    fig = show_animation(y_test, y_pred)
+def save_animation(y_test, y_pred, output_location, x_range, y_range, z_range):
+    fig = show_animation(y_test, y_pred, x_range, y_range, z_range)
     pio.write_html(fig, output_location)
