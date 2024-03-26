@@ -66,14 +66,16 @@ def show_animation(y_test, y_pred,x_range, y_range, z_range):
     # Update layout
     fig.update_layout(
         scene=dict(
-            xaxis=dict(showbackground=False, showgrid=True, showline=True, linecolor='black', linewidth=2),
-            yaxis=dict(showbackground=False, showgrid=True, showline=True, linecolor='black', linewidth=2),
-            zaxis=dict(showbackground=False, showgrid=True, showline=True, linecolor='black', linewidth=2),
+            xaxis=dict(showbackground=False, showgrid=True, gridwidth=1, gridcolor='gray', showline=True,
+                       linecolor='black', linewidth=2),
+            yaxis=dict(showbackground=False, showgrid=True, gridwidth=1, gridcolor='gray', showline=True,
+                       linecolor='black', linewidth=2),
+            zaxis=dict(showbackground=False, showgrid=True, gridwidth=1, gridcolor='gray', showline=True,
+                       linecolor='black', linewidth=2),
             xaxis_title='X axis',
             yaxis_title='Y axis',
             zaxis_title='Z axis',
             # set the x-axis from 0 to 20
-
             xaxis_range=xaxis_range,
             yaxis_range=yaxis_range,
             zaxis_range=zaxis_range,
@@ -149,7 +151,7 @@ def show_animation(y_test, y_pred,x_range, y_range, z_range):
             label='Play',
             method='animate',
             args=[None, dict(
-                frame=dict(duration=40, redraw=True),
+                frame=dict(duration=100, redraw=True),
                 fromcurrent=True,
                 mode='immediate'
             )]
