@@ -11,7 +11,7 @@ pip install -r requirements.txt
   - The unity project also stores the position of the redball in a file `positions_{date}.csv`
 ### Step 3: Track the ball in the recordings
 In the file [StoreDataOfAllRecordings.ipynb](DataProcessing%2FStoreDataOfAllRecordings.ipynb), at the top fill in the variables correctly and run the notebook.
-This will store the position of the red ball in the recordings with the name and output location you gave in the variables
+This will convert the recordings to the position of the ball on the screen with the name and output location you gave in the variables.
 - note: In the notebook [TrackBallFromVideo.ipynb](DataProcessing%2FTrackBallFromVideo.ipynb) you can watch how the ball is tracked in the video.
 ### Step 4: Optional: Use interpolation to fill in missing values
 If your data has some missing values, you can use the [TrajectoryPredictionInterpolation.ipynb](ball-prediction%2FTrajectoryPredictionInterpolation.ipynb) notebook to interpolate the missing values.
@@ -49,4 +49,5 @@ At the end of the notebook you can see the result of the prediction.
 - All other notebooks are an overview of the results of the different models we tried out.
 
 ##### In the folder [results](results)
-- We show a few graphs about the metrics of the models we tried out.
+- We show a few graphs with the result metrics of our all predictions.
+- The notebook [AnimationMaker.ipynb](results%2FAnimationMaker.ipynb) can be used to create an animation of the prediction. Where you can compare the actual and the predicted trajectory. To see the results you need to extract the corresponding cvs files the the results of both the actual and the predicted trajectory.
